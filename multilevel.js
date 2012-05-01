@@ -29,8 +29,6 @@ Description:	Displays multiple lists of links as a dropdown menu
 		var topLevelUl = $('ul:first', base.el);
 		var topLevelLi = $('ul:first > li', base.el);
 
-		console.log(topLevelUl);
-
 		base.init = function () {
 			base.options = $.extend({}, $.responsive.multilevel.defaultOptions, options);
 			
@@ -47,11 +45,15 @@ Description:	Displays multiple lists of links as a dropdown menu
 		
 		// item - list item containing the sub menu
 		base.showDropdown = function(item) {
-			item.find("div").show();
+			item.children().show();
 		};
 		
 		base.hideDropdown = function() {
-			$('ul li div', base.el).hide();
+			if($('ul > li > div', base.el).length > 0) {
+				$('ul > li > div', base.el).hide();
+			} else {
+				$('ul li ul', base.el).hide();
+			}
 		};
 		
 		base.create = function()
@@ -70,6 +72,7 @@ Description:	Displays multiple lists of links as a dropdown menu
 		
 		base.destroy = function() {
 			$('div', base.el).removeAttr('style');
+			$('ul', base.el).removeAttr('style');
 			topLevelLi.unbind("click mouseenter mouseleave");
 		};
 		
