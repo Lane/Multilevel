@@ -3,7 +3,8 @@ Multilevel
 
 jQuery plugin to build a multilevel navigation system out of a nested linked list.
 
-* [Demo](http://www.laneolson.ca/sandbox/Multilevel/demo.html)
+* [Basic Multilevel Demo](http://www.laneolson.ca/sandbox/Multilevel/demo.html) - Basic usage of multilevel
+* [Responsive Multilevel Demo](http://www.laneolson.ca/sandbox/Slider/responsive.html) - Responsive example using [responder](http://www.github.com/Lane/Responder/) and [slider](http://www.github.com/Lane/Responder/)
 
 ## Usage ##
 
